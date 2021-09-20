@@ -13,7 +13,7 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = ".\irs-recipeagent-eumg-e91a34c1c
 
 
 def reqHandler(msg):  # directly monitor telegram
-	msg_type = telepot.glance(msg)[0]
+	(msg_type, _, chat_id) = telepot.glance(msg)
 
 	if msg_type == 'photo':  # when a photo comes in, handle it without dialogflow
 		# img = bot.getFile(msg['photo'][-1]['file_id'])
@@ -22,12 +22,13 @@ def reqHandler(msg):  # directly monitor telegram
 
 		bot.download_file(msg['photo'][-1]['file_id'], './images/' + msg['photo'][-1]['file_id'] + '.png')  # download
 		# the image sent by users
-		print('a photo received')
+		bot.sendMessage(chat_id, 'a photo received (returned by script)')
 
 	elif msg_type == 'text':  # when a text comes in, call dialogflow API to detect the intent
 		query_sentence = str(msg['text'])
-		intent_name = detect_intent_texts(df_agentID, msg['chat']['id'], query_sentence, 'en-US')
-		print(intent_name)
+		(intent_name, default_response) = detect_intent_texts(df_agentID, msg['chat']['id'], query_sentence, 'en-US')
+		bot.sendMessage(chat_id, 'your intent is: ' + intent_name + '(returned by calling dialogflow API)')
+		bot.sendMessage(chat_id, 'the pre-set response in DF is: ' + default_response)
 
 
 bot = telepot.Bot(telegram_botTOKEN)

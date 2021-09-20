@@ -27,4 +27,4 @@ def detect_intent_texts(project_id, session_id, text,
 	# )
 	# print("Fulfillment text: {}\n".format(response.query_result.fulfillment_text))
 
-	return str(response.query_result.intent.display_name)
+	return [str(response.query_result.intent.display_name), str(response.query_result.fulfillment_text)]
