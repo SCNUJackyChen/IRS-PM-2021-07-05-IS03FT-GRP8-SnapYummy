@@ -1,3 +1,7 @@
+########################################################
+# FUNCTION TO COMMUNICATE WITH BACKEND - YOLO AND KG
+#
+########################################################
 
 def browse_randomdish():
 	return "Here is your randomDish:. \nPlease type the recipename you would like to have: "
@@ -27,6 +31,13 @@ def rec_allInfo(recipename):
 	cooktime = rec_cooktime(recipename)
 	responsetxt = instr + "\n" + cooktime
 	return "You have choosen " + recipename + "\n" + responsetxt
+
+
+
+##############################################################
+# FUNCTION TO HANDLE INTENT
+#
+##############################################################
 
 def Intent_Handler(intent_name, parameters):
 	if intent_name == 'Browsing - random dishes':
