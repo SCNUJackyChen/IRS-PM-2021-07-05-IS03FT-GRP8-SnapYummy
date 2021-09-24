@@ -19,7 +19,7 @@ def rec_allInfo(recipename):
 	instr = rec_instr(recipename)
 	cooktime = rec_cooktime(recipename)
 	responsetxt = instr + "\n" + cooktime
-	return responsetxt
+	return "You have choosen " + recipename + "\n" + responsetxt
 
 def Intent_Handler(intent_name, parameters):
 	if intent_name == 'Browsing - random dishes':
@@ -39,7 +39,11 @@ def Intent_Handler(intent_name, parameters):
 
 	elif intent_name == "Recipe - Instructions":
 		recipename = parameters["recipename"]
-		response_text = rec_instr()
+		response_text = rec_instr(recipename)
+
+	elif intent_name == "Recipe - CookingTime":
+		recipename = parameters["recipename"]
+		response_text = rec_cooktime(recipename)
 
 	else:
 		response_text = "Please try again. Unable to find a matching intent"
