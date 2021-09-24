@@ -46,15 +46,15 @@ def Intent_Handler(intent_name, parameters):
 
 	elif intent_name == 'Browsing - specific dishes - dietary_cuisine':
 		# Get the cuisine and dietary
-		cuisine = list(parameters["cuisine"])
+		cuisine = set(parameters["cuisine"])
 		dietary = parameters["dietary"]
 		# Call specific dish KG
 		response_text = browse_byCuisineDietary(cuisine, dietary)
 
 	elif intent_name == "cooking.ingredients.textmodify - no - dietary_cuisine":
 		# Get the ingredients, cuisine and dietary
-		ingred = list(parameters['ingredients'])
-		cuisine = list(parameters["cuisine"])
+		ingred = set(parameters['ingredients'])
+		cuisine = set(parameters["cuisine"])
 		dietary = parameters["dietary"]
 		# Call specific dish KG
 		response_text = cook_byIngredCuisineDietary(ingred, cuisine, dietary)
@@ -84,8 +84,8 @@ def Intent_Handler(intent_name, parameters):
 	#Showing more recipe results. Can be coming from random flow or specific flow
 	elif intent_name == "Recipe - more_results":
 		# Get the ingredients, cuisine and dietary
-		ingred = list(parameters['ingredients'])
-		cuisine = list(parameters["cuisine"])
+		ingred = set(parameters['ingredients'])
+		cuisine = set(parameters["cuisine"])
 		dietary = parameters["dietary"]
 
 		#random - more
