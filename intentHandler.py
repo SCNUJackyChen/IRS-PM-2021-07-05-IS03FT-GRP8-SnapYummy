@@ -7,6 +7,13 @@ def browse_byCuisineDietary(cuisineList, dietary):
 	responsetxt = "You prefer " + cuisine + " cuisine and you have " + dietary + " constraints"
 	return responsetxt
 
+def cook_byIngredCuisineDietary(ingredList, cuisineList, dietary):
+	ingredStr = ' '.join([str(elem) for elem in ingredList])
+	cuisineStr = ' '.join([str(elem) for elem in cuisineList])
+	responsetxt = "Ingredients: " + ingredStr + "\n\
+					You prefer " + cuisineStr + " cuisine and you have " + dietary + " constraints"
+	return responsetxt
+
 def rec_instr(recipename):
 	responsetxt = "Instructions for " + recipename + ": "
 	return responsetxt
@@ -32,6 +39,14 @@ def Intent_Handler(intent_name, parameters):
 		dietary = parameters["dietary"]
 		# Call specific dish KG
 		response_text = browse_byCuisineDietary(cuisine, dietary)
+
+	elif intent_name == "cooking.ingredients.textmodify - no - dietary_cuisine":
+		# Get the ingredients, cuisine and dietary
+		ingred = list(parameters['ingredients'])
+		cuisine = list(parameters["cuisine"])
+		dietary = parameters["dietary"]
+		# Call specific dish KG
+		response_text = cook_byIngredCuisineDietary(ingred, cuisine, dietary)
 
 	elif intent_name == 'Recipe':
 		recipename = parameters["recipename"]
