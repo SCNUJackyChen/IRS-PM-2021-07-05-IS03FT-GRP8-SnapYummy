@@ -60,6 +60,28 @@ def Intent_Handler(intent_name, parameters):
 		recipename = parameters["recipename"]
 		response_text = rec_cooktime(recipename)
 
+	elif intent_name == "Recipe - recipeimg":
+		recipename = parameters["recipename"]
+		# To be updated
+		response_text = recipename
+
+	elif intent_name == "Recipe - ingredients":
+		recipename = parameters["recipename"]
+		# To be updated
+		response_text = recipename
+
+	#Showing more recipe results. Can be coming from random flow or specific flow
+	elif intent_name == "Recipe - more_results":
+		# Get the ingredients, cuisine and dietary
+		ingred = list(parameters['ingredients'])
+		cuisine = list(parameters["cuisine"])
+		dietary = parameters["dietary"]
+
+		#random - more
+
+		# specific - more
+		response_text = ""
+
 	else:
 		response_text = "Please try again. Unable to find a matching intent"
 
