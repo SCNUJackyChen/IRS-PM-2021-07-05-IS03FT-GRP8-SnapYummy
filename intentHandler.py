@@ -1,11 +1,11 @@
 
 def browse_randomdish():
-    return "randomDish"
+	return "randomDish"
 
 def browse_byCuisineDietary(cuisineList, dietary):
-    cuisine = ' '.join([str(elem) for elem in cuisineList])
-    responsetxt = "You prefer " + cuisine + " cuisine and you have " + dietary + " constraints"
-    return responsetxt
+	cuisine = ' '.join([str(elem) for elem in cuisineList])
+	responsetxt = "You prefer " + cuisine + " cuisine and you have " + dietary + " constraints"
+	return responsetxt
 
 
 def Intent_Handler(intent_name, parameters):
