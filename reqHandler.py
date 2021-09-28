@@ -2,6 +2,7 @@ import telepot
 import time
 import os
 from dfCaller import *
+from yoloCaller import *
 from intentHandler import *
 import random
 from telepot.loop import MessageLoop
@@ -12,6 +13,7 @@ from telepot.loop import MessageLoop
 df_agentID = 'recipeagent-swjn'
 telegram_botTOKEN = '1983955379:AAEhEf0VbCtA_AVSBfHfFMmDuA_HWqNaDsI'
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "recipeagent.json"
+
 
 def reqHandler(msg):  # directly monitor telegram
 	(msg_type, _, chat_id) = telepot.glance(msg)
@@ -25,14 +27,22 @@ def reqHandler(msg):  # directly monitor telegram
 		# img = bot.getFile(msg['photo'][-1]['file_id'])
 		# print(msg['photo'][-1])
 		# print(img)
+		img_dir = './images/' + str(chat_id) + str(time.time()) + '.png'
+		bot.download_file(msg['photo'][-1]['file_id'], img_dir)  # download the image sent by users
+		detected_ingredients = detect_image(img_dir)  # send the img to YOLO and get results
 
-		bot.download_file(msg['photo'][-1]['file_id'], './images/' + msg['photo'][-1]['file_id'] + '.png')  # download
-		# the image sent by users
-		bot.sendMessage(chat_id, 'a photo received (returned by script)')
+		# assume a user's intent is always 'cooking.ingredients.text' when he sends an image, do these to link back to the normal workflow
+		(intent_name, df_response, parameters) = detect_intent_texts(df_agentID, msg['chat']['id'], ', '.join(detected_ingredients),
+																	 'en-US')
+		print(intent_name, "-", df_response, "-", parameters)
+		bot.sendMessage(chat_id, df_response)
+
+
 
 	elif msg_type == 'text':  # when a text comes in, call dialogflow API to detect the intent
 		query_sentence = str(msg['text'])
-		(intent_name, df_response, parameters) = detect_intent_texts(df_agentID, msg['chat']['id'], query_sentence, 'en-US')
+		(intent_name, df_response, parameters) = detect_intent_texts(df_agentID, msg['chat']['id'], query_sentence,
+																	 'en-US')
 		print(intent_name, "-", df_response, "-", parameters)
 		if df_response == "":
 			response_text = Intent_Handler(intent_name, parameters)

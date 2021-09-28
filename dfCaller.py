@@ -1,8 +1,9 @@
-from flask import Flask, request, make_response, jsonify
-import requests
+# from flask import Flask, request, make_response, jsonify
+# import requests
 from google.cloud import dialogflow
 
-app = Flask(__name__)
+
+# app = Flask(__name__)
 
 def detect_intent_texts(project_id, session_id, text,
 						language_code):  # sent query to dialogflow to get intent & default response
@@ -30,4 +31,5 @@ def detect_intent_texts(project_id, session_id, text,
 	# )
 	# print("Fulfillment text: {}\n".format(response.query_result.fulfillment_text))
 
-	return [str(response.query_result.intent.display_name), str(response.query_result.fulfillment_text), response.query_result.parameters]
+	return [str(response.query_result.intent.display_name), str(response.query_result.fulfillment_text),
+			response.query_result.parameters]
