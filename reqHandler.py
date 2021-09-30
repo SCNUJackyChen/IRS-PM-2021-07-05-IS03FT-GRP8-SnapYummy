@@ -31,7 +31,7 @@ def reqHandler(msg):  # directly monitor telegram
 		bot.download_file(msg['photo'][-1]['file_id'], img_dir)  # download the image sent by users
 		detected_ingredients = detect_image(img_dir)  # send the img to YOLO and get results
 
-		# assume a user's intent is always 'cooking.ingredients.text' when he sends an image, do these to link back to the normal workflow
+		# whenever user upload an image, send '/cooking' to DF -> reset the workflow
 		detect_intent_texts(df_agentID, msg['chat']['id'], '/cooking', 'en-US')
 		(intent_name, df_response, parameters) = detect_intent_texts(df_agentID, msg['chat']['id'], ', '.join(detected_ingredients),
 																	 'en-US')
