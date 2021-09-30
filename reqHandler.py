@@ -32,6 +32,7 @@ def reqHandler(msg):  # directly monitor telegram
 		detected_ingredients = detect_image(img_dir)  # send the img to YOLO and get results
 
 		# assume a user's intent is always 'cooking.ingredients.text' when he sends an image, do these to link back to the normal workflow
+		detect_intent_texts(df_agentID, msg['chat']['id'], '/cooking', 'en-US')
 		(intent_name, df_response, parameters) = detect_intent_texts(df_agentID, msg['chat']['id'], ', '.join(detected_ingredients),
 																	 'en-US')
 		print(intent_name, "-", df_response, "-", parameters)
