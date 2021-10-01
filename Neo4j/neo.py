@@ -125,8 +125,8 @@ def getRecipeByName(rep: str) -> Dict:
 # RETURN rep
 
 
-def getIngredient(rep: str) -> List[str]:
-    query = "MATCH (rep:recipe)-[:Has_Ingredient]->(a:ingredient) WHERE rep.Name=~'(?i){0}' RETURN a".format(rep)
+def getIngredient(id: str, rep: str) -> List[str]:
+    query = "MATCH (rep:recipe)-[:Has_Ingredient]->(a:ingredient) WHERE rep.Name=~'(?i){0}' AND rep.RecipeId='{1}' RETURN a".format(rep, id)
     res = graph.run(query)
     res = pd.DataFrame(res)
     ingrs = []
