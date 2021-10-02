@@ -83,8 +83,8 @@ def getRecipes(
 # Unit Test 1
 ########################################
 
-res = getRecipes(['apple','banana', 'strawberry'], dietary='vegan')
-print(type(res[0]))
+# res = getRecipes(['apple','banana', 'strawberry'], dietary='vegan')
+# print(type(res[0]))
 
 # Sample query
 
