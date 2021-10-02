@@ -48,6 +48,11 @@ def reqHandler(msg):  # directly monitor telegram
 			recipe_name = USERS[chat_id].recipes[id]["Name"]
 			query_sentence = 'Got recipe for ' + recipe_name
 			USERS[chat_id].set_pick(id)
+		# elif query_sentence[0:2] == '/b' and query_sentence[2:].isdigit():
+		# 	id = int(query_sentence[2:])
+		# 	recipe_name = USERS[chat_id].recipes[id]["Name"]
+		# 	query_sentence = 'Got recipe for ' + recipe_name	
+		# 	USERS[chat_id].set_pick(id)
 		elif query_sentence == '/instruction':
 			query_sentence = 'instructions'
 		elif query_sentence == '/time':
@@ -63,8 +68,9 @@ def reqHandler(msg):  # directly monitor telegram
 		if df_response == "":
 			if chat_id in USERS.keys():
 				id = USERS[chat_id].get_pick()
-				parameters["recipename"] = USERS[chat_id].recipes[id]["Name"]
-				parameters["RID"] = id
+				if id is not None:
+					parameters["recipename"] = USERS[chat_id].recipes[id]["Name"]
+					parameters["RID"] = id
 			response_text = Intent_Handler(intent_name, parameters, chat_id)
 		else:
 			response_text = df_response

@@ -9,7 +9,7 @@ import random
 graph = Graph("http://localhost:7474", username="neo4j", password='nusiss')
 
 main_ingr = set(['apple', 'banana', 'bell pepper', 'broccoli', 'cabbage', 'carrot', 'cheese', 'coconut', 'cucumber', 'egg', 'fish', 'grapes', 'lemon', 'mango', 'milk', 'mushroom', 'oranges', 'peach', 'pear', 'pineapple', 'potatoes', 'pumpkin', 'seafood', 'shrimp', 'strawberry', 'tomatoes', 'watermelon', 'winter melon', 'garlic', 'corn', 'eggplant', 'lettuce', 'onion', 'scallion', 'chicken', 'beef', 'lamb', 'pork', 'sauce', 'duck', 'meatball', 'wine', 'berries', 'crabmeat', 'kiwi', 'bitter melon', 'pepper', 'peas', 'ginger', 'shells', 'chili', 'ham', 'sausage', 'butter', 'bread', 'rice', 'vanilla'])
-random_set = {}
+
 
 
 def getRecipes(
@@ -83,8 +83,8 @@ def getRecipes(
 # Unit Test 1
 ########################################
 
-# res = getRecipes(['apple','banana', 'strawberry'], dietary='vegan')
-# print(type(res[0]))
+res = getRecipes(['apple','banana', 'strawberry'], dietary='vegan')
+print(type(res[0]))
 
 # Sample query
 
@@ -148,27 +148,33 @@ def getIngredient(id: str, rep: str) -> List[str]:
 # RETURN a
 
 
-def random_init(length = 50):
-    query = "MATCH (n:recipe) RETURN n LIMIT {0}".format(str(length))
-    res = graph.run(query)
-    res = pd.DataFrame(res)
-    for i in range(res.shape[0]):
-        random_set[i] = res.iloc[i,0]
+# def random_init(length = 50):
+#     query = "MATCH (n:recipe) RETURN n LIMIT {0}".format(str(length))
+#     res = graph.run(query)
+#     res = pd.DataFrame(res)
+#     for i in range(res.shape[0]):
+#         random_set[i] = res.iloc[i,0]
 
 def browser(topk: int = 10, dietary: str = None, cuisine: str = None) -> List[Dict]:
-    if (len(random_set) == 0):
-        random_init()
-    keys = random.sample(range(1,len(random_set)), topk)
-    res = itemgetter(*keys)(random_set)
-    return res
+    query = "MATCH (a:recipe) WITH rand() as r, a "
+    if dietary is not None:
+        query += "WHERE (a)-[:Has_Meal_Type]->(:meal_type{{Name:'{0}'}})".format(dietary)
+    
+    query += "RETURN a ORDER BY r LIMIT {0};".format(topk)
+    res = graph.run(query)
+    res = pd.DataFrame(res)
+    recipes = []
+    for i in range(res.shape[0]):
+        recipes.append(res.iloc[i,0])
+    return recipes
 
 
 ########################################
 # Unit Test 3
 ########################################
 
-# print(browser())
+# print(browser(dietary=None))
 
 
-    
+
     

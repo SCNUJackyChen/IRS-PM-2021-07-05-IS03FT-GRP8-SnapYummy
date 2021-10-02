@@ -9,12 +9,26 @@ from Conversation import Conversation
 
 USERS = {}
 
-def browse_randomdish():
-	return "Here is your randomDish:. \nPlease type the recipename you would like to have: "
+def browse_randomdish(chat_id):
+	recipes = neo.browser()
+	responsetxt = "Here is your randomDish: \n"
+	for i, r in enumerate(recipes):
+		responsetxt += '/' + str(i) + ' ' + r['Name'] + '\n'
+	USERS[chat_id] = Conversation(chat_id, recipes)
+	
+	return responsetxt
 
-def browse_byCuisineDietary(cuisineList, dietary):
+def browse_byCuisineDietary(cuisineList, dietary, chat_id):
 	cuisine = ' '.join([str(elem) for elem in cuisineList])
-	responsetxt = "You prefer " + cuisine + " cuisine and you have " + dietary + " constraints"
+	if 'no' in dietary.lower():
+		dietary = None
+	recipes = neo.browser(dietary=dietary)
+	USERS[chat_id] = Conversation(chat_id, recipes)
+	cuisine = 'no cuisine' if cuisine == None else cuisine
+	dietary = 'no dietary' if dietary == None else dietary
+	responsetxt = "You prefer " + cuisine + " and you have " + dietary + " constraints \n"
+	for i, r in enumerate(recipes):
+		responsetxt += '/' + str(i) + ' ' + r['Name'] + '\n'
 	return responsetxt
 
 def cook_byIngredCuisineDietary(ingredList, cuisineList, dietary, chat_id):
@@ -76,14 +90,14 @@ def rec_allInfo(recipeID, recipename, chat_id):
 def Intent_Handler(intent_name, parameters, chat_id):
 	if intent_name == 'Browsing - random dishes':
 		# Call random dish KG
-		response_text = browse_randomdish()
+		response_text = browse_randomdish(chat_id)
 
 	elif intent_name == 'Browsing - specific dishes - dietary_cuisine':
 		# Get the cuisine and dietary
 		cuisine = set(parameters["cuisine"])
 		dietary = parameters["dietary"]
 		# Call specific dish KG
-		response_text = browse_byCuisineDietary(cuisine, dietary)
+		response_text = browse_byCuisineDietary(cuisine, dietary, chat_id)
 
 	elif intent_name == "cooking.ingredients.textmodify - no - dietary_cuisine":
 		# Get the ingredients, cuisine and dietary
