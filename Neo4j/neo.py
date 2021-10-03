@@ -15,8 +15,9 @@ main_ingr = set(['apple', 'banana', 'bell pepper', 'broccoli', 'cabbage', 'carro
 def getRecipes(
     ingr: List[str], 
     topk: int = 10, 
-    dietary: str = None, 
-    cuisine: str = None) -> List[Dict]:
+    dietaryList: List[str] = None, 
+    cuisine: str = None,
+    skip: int = 0) -> List[Dict]:
 
     n = len(ingr)
     if (n == 0): return [{}]
@@ -47,8 +48,19 @@ def getRecipes(
     query = ''
     for i in range(n):
         query += "OPTIONAL MATCH ((rep:recipe)-[r{0}:{3}]->(i{1}:{4}{{Name: '{2}'}})) ".format(str(i), str(i), ingr_type[sorted_ingr[i]][0], ingr_type[sorted_ingr[i]][1], ingr_type[sorted_ingr[i]][2])
-    if dietary is not None:
-        query += "MATCH (rep)-[rs:Has_Meal_Type]->(:meal_type{{Name: '{0}'}}) WHERE (rep)-[:Has_Meal_Type]->(:meal_type{{Name: '{1}'}})".format(dietary, dietary)
+    if dietaryList is not None:
+        for dietary in dietaryList:
+            if dietary == 'halal':
+                query += "MATCH (rep) WHERE rep.halal is null "
+            elif dietary == 'vegetarian':
+                vegan = 'vegan'
+                query += "MATCH (rep)-[rs:Has_Meal_Type]->(:meal_type{{Name: '{0}'}}) WHERE (rep)-[:Has_Meal_Type]->(:meal_type{{Name: '{1}'}}) ".format(vegan, vegan)
+            elif dietary == 'fruitarian':
+                query += "MATCH (rep)-[:Has_Inferred_Meal_Type]->(:meal_type{Name:'fruit'}) "
+            elif dietary == 'eggetarian':
+                query += "MATCH (rep)-[:Has_Main_Ingredient]->(:main_ingredient{Name:'EGG'}) "
+    if cuisine is not None:
+        query += "MATCH (rep)-[:Has_Cuisine_Type]->(:cuisine_type{{Name: '{0}'}}) ".format(cuisine)
     query += "WITH rep, "
     for i in range(n):
         query += "r{0}, i{1}, ".format(str(i), str(i))
@@ -66,7 +78,7 @@ def getRecipes(
     for i in range(n):
         query += "(case when minus_degree{0}>=1 then 1 else 0 end)+".format(str(i))
     query = query[:-1] + " desc"
-    query += ",degree LIMIT 25;"
+    query += ",degree SKIP {0} LIMIT 25;".format(skip * topk)
 
     print(query)
     res = graph.run(query)
@@ -83,7 +95,7 @@ def getRecipes(
 # Unit Test 1
 ########################################
 
-# res = getRecipes(['apple','banana', 'strawberry'], dietary='vegan')
+# res = getRecipes(['apple','banana', 'strawberry'], dietaryList=['vegetarian'], cuisine='chinese')
 # print(type(res[0]))
 
 # Sample query
@@ -155,12 +167,25 @@ def getIngredient(id: str, rep: str) -> List[str]:
 #     for i in range(res.shape[0]):
 #         random_set[i] = res.iloc[i,0]
 
-def browser(topk: int = 10, dietary: str = None, cuisine: str = None) -> List[Dict]:
+def browser(topk: int = 10, 
+            dietaryList: List[str] = None, 
+            cuisine: str = None) -> List[Dict]:
     query = "MATCH (a:recipe) WITH rand() as r, a "
-    if dietary is not None:
-        query += "WHERE (a)-[:Has_Meal_Type]->(:meal_type{{Name:'{0}'}})".format(dietary)
-    
+    if dietaryList is not None:
+        for dietary in dietaryList:
+            if dietary == 'halal':
+                query += "MATCH (a) WHERE a.halal is null "
+            elif dietary == 'vegetarian':
+                vegan = 'vegan'
+                query += "MATCH (a)-[rs:Has_Meal_Type]->(:meal_type{{Name: '{0}'}}) WHERE (a)-[:Has_Meal_Type]->(:meal_type{{Name: '{1}'}}) ".format(vegan, vegan)
+            elif dietary == 'fruitarian':
+                query += "MATCH (a)-[:Has_Inferred_Meal_Type]->(:meal_type{Name:'fruit'}) "
+            elif dietary == 'eggetarian':
+                query += "MATCH (a)-[:Has_Main_Ingredient]->(:main_ingredient{Name:'EGG'}) "
+    if cuisine is not None:
+        query += "MATCH (a)-[:Has_Cuisine_Type]->(:cuisine_type{{Name: '{0}'}}) ".format(cuisine)
     query += "RETURN a ORDER BY r LIMIT {0};".format(topk)
+    print(query)
     res = graph.run(query)
     res = pd.DataFrame(res)
     recipes = []
@@ -173,7 +198,7 @@ def browser(topk: int = 10, dietary: str = None, cuisine: str = None) -> List[Di
 # Unit Test 3
 ########################################
 
-# print(browser(dietary=None))
+# print(browser(dietaryList=['halal','fruitarian'], cuisine='chinese'))
 
 
 

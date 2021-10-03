@@ -61,6 +61,8 @@ def reqHandler(msg):  # directly monitor telegram
 			query_sentence = 'show me the ingredients for this dish'
 		elif query_sentence == '/all':
 			query_sentence = 'show all'
+		elif query_sentence == '/more':
+			query_sentence = 'more results'
 		
 		(intent_name, df_response, parameters) = detect_intent_texts(df_agentID, msg['chat']['id'], query_sentence,
 																	 'en-US')

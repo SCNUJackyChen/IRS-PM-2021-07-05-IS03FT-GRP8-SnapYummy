@@ -6,6 +6,7 @@ class Conversation:
 		self.ID = id
 		self.recipes = recipes
 		self.pick = None
+		self.search_time = 0
 
 	# def def_ingredient(self, ingredient_list):
 	# 	self.ingredient = ingredient_list
@@ -24,3 +25,9 @@ class Conversation:
 	
 	def get_pick(self):
 		return self.pick
+
+	def set_search_time(self, t):
+		self.search_time = t
+
+	def get_search_time(self):
+		return self.search_time

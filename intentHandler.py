@@ -3,6 +3,7 @@
 #
 ########################################################
 
+from typing import ChainMap
 from py2neo.data import Record
 from Neo4j import neo
 from Conversation import Conversation
@@ -14,34 +15,57 @@ def browse_randomdish(chat_id):
 	responsetxt = "Here is your randomDish: \n"
 	for i, r in enumerate(recipes):
 		responsetxt += '/' + str(i) + ' ' + r['Name'] + '\n'
-	USERS[chat_id] = Conversation(chat_id, recipes)
+	responsetxt += '/more dishes'
+	if chat_id not in USERS:
+		USERS[chat_id] = Conversation(chat_id, recipes)
+	else:
+		USERS[chat_id].recipes = recipes
 	
 	return responsetxt
 
-def browse_byCuisineDietary(cuisineList, dietary, chat_id):
-	cuisine = ' '.join([str(elem) for elem in cuisineList])
-	if 'no' in dietary.lower():
-		dietary = None
-	recipes = neo.browser(dietary=dietary)
-	USERS[chat_id] = Conversation(chat_id, recipes)
-	cuisine = 'no cuisine' if cuisine == None else cuisine
-	dietary = 'no dietary' if dietary == None else dietary
-	responsetxt = "You prefer " + cuisine + " and you have " + dietary + " constraints \n"
+def browse_byCuisineDietary(cuisine, dietaryList, chat_id):
+	dietaryStr = ' '.join([str(elem) for elem in dietaryList])
+	responsetxt = "You prefer " + cuisine + " and you have " + dietaryStr + " constraints \n"
+
+	if 'no' in dietaryList[0].lower():
+		dietaryList = None
+	if 'no' in cuisine.lower():
+		cuisine = None
+	recipes = neo.browser(cuisine=cuisine, dietaryList=dietaryList)
+	if chat_id not in USERS:
+		USERS[chat_id] = Conversation(chat_id, recipes)
+	else:
+		USERS[chat_id].recipes = recipes
+	
 	for i, r in enumerate(recipes):
 		responsetxt += '/' + str(i) + ' ' + r['Name'] + '\n'
+	responsetxt += '/more dishes'
 	return responsetxt
 
-def cook_byIngredCuisineDietary(ingredList, cuisineList, dietary, chat_id):
+def cook_byIngredCuisineDietary(ingredList, cuisine, dietaryList, chat_id):
 	ingredStr = ' '.join([str(elem) for elem in ingredList])
-	cuisineStr = ' '.join([str(elem) for elem in cuisineList])
+	dietaryStr = ' '.join([str(elem) for elem in dietaryList])
+
 	responsetxt = "Ingredients: " + ingredStr + "\n\
-					You prefer " + cuisineStr + " cuisine and you have " + dietary + " constraints" + "\n"
-	if 'no' in dietary.lower():
-		dietary = None
-	recipes = neo.getRecipes(list(ingredList), dietary=dietary)
+					You prefer " + cuisine + " cuisine and you have " + dietaryStr + " constraints" + "\n"
+	if 'no' in dietaryList[0].lower():
+		dietaryList = None
+	if 'no' in cuisine.lower():
+		cuisine = None
+	skip = 0
+	if chat_id in USERS:
+		USERS[chat_id].search_time += 1
+		skip = USERS[chat_id].search_time
+
+	recipes = neo.getRecipes(list(ingredList), cuisine=cuisine, dietaryList=dietaryList, skip=skip)
 	for i, r in enumerate(recipes):
 		responsetxt += '/' + str(i) + ' ' + r['Name'] + '\n'
-	USERS[chat_id] = Conversation(chat_id, recipes)
+	responsetxt += '/more dishes'
+	if chat_id not in USERS:
+		USERS[chat_id] = Conversation(chat_id, recipes)
+	else:
+		USERS[chat_id].recipes = recipes
+
 	return responsetxt
 
 def list_selection(recipename):
@@ -94,16 +118,16 @@ def Intent_Handler(intent_name, parameters, chat_id):
 
 	elif intent_name == 'Browsing - specific dishes - dietary_cuisine':
 		# Get the cuisine and dietary
-		cuisine = set(parameters["cuisine"])
-		dietary = parameters["dietary"]
+		cuisine = parameters["cuisine"]
+		dietary = list(set(parameters["dietary"]))
 		# Call specific dish KG
 		response_text = browse_byCuisineDietary(cuisine, dietary, chat_id)
 
 	elif intent_name == "cooking.ingredients.textmodify - no - dietary_cuisine":
 		# Get the ingredients, cuisine and dietary
-		ingred = set(parameters['ingredients'])
-		cuisine = set(parameters["cuisine"])
-		dietary = parameters["dietary"]
+		ingred = parameters['ingredients']
+		cuisine = parameters["cuisine"]
+		dietary = list(set(parameters["dietary"]))
 		# Call specific dish KG
 		response_text = cook_byIngredCuisineDietary(ingred, cuisine, dietary, chat_id)
 
@@ -139,15 +163,18 @@ def Intent_Handler(intent_name, parameters, chat_id):
 
 	#Showing more recipe results. Can be coming from random flow or specific flow
 	elif intent_name == "Recipe - more_results":
-		# Get the ingredients, cuisine and dietary
-		ingred = set(parameters['ingredients'])
-		cuisine = set(parameters["cuisine"])
-		dietary = parameters["dietary"]
 
-		#random - more
-
-		# specific - more
-		response_text = ""
+		if parameters['ingredients'] != '':
+			ingred = parameters['ingredients']
+			cuisine = parameters["cuisine"]
+			dietary = list(set(parameters["dietary"]))
+			response_text = cook_byIngredCuisineDietary(ingred, cuisine, dietary, chat_id)
+		elif parameters['cuisine'] != '':
+			cuisine = parameters["cuisine"]
+			dietary = list(set(parameters["dietary"]))
+			response_text = browse_byCuisineDietary(cuisine, dietary, chat_id)
+		else:
+			response_text = browse_randomdish(chat_id)
 
 	else:
 		response_text = "Please try again. Unable to find a matching intent"
