@@ -32,12 +32,15 @@ def reqHandler(msg):  # directly monitor telegram
 		bot.download_file(msg['photo'][-1]['file_id'], img_dir)  # download the image sent by users
 		detected_ingredients = detect_image(img_dir)  # send the img to YOLO and get results
 
-		# whenever user upload an image, send '/cooking' to DF -> reset the workflow
-		detect_intent_texts(df_agentID, msg['chat']['id'], '/cooking', 'en-US')
-		(intent_name, df_response, parameters) = detect_intent_texts(df_agentID, msg['chat']['id'], ', '.join(detected_ingredients),
-																	 'en-US')
-		print(intent_name, "-", df_response, "-", parameters)
-		bot.sendMessage(chat_id, df_response)
+		if len(detected_ingredients) == 0:  # no thing detected
+			bot.sendMessage(chat_id, 'nothing detected, please use other images or input by texting :(')
+		else:  # anything is detected
+			# whenever user upload an image, send '/cooking' to DF -> reset the workflow
+			detect_intent_texts(df_agentID, msg['chat']['id'], '/cooking', 'en-US')
+			(intent_name, df_response, parameters) = detect_intent_texts(df_agentID, msg['chat']['id'], ', '.join(detected_ingredients),
+																		 'en-US')
+			print(intent_name, "-", df_response, "-", parameters)
+			bot.sendMessage(chat_id, df_response)
 
 
 
