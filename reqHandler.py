@@ -63,6 +63,8 @@ def reqHandler(msg):  # directly monitor telegram
 			query_sentence = 'show all'
 		elif query_sentence == '/more':
 			query_sentence = 'more results'
+		elif query_sentence == '/img':
+			query_sentence = 'show me the recipe image'
 		
 		(intent_name, df_response, parameters) = detect_intent_texts(df_agentID, msg['chat']['id'], query_sentence,
 																	 'en-US')
@@ -76,7 +78,12 @@ def reqHandler(msg):  # directly monitor telegram
 			response_text = Intent_Handler(intent_name, parameters, chat_id)
 		else:
 			response_text = df_response
-		bot.sendMessage(chat_id, response_text)
+
+		if type(response_text) == list:  # an image url is contained
+			bot.sendMessage(chat_id, response_text[0])
+			bot.sendPhoto(chat_id, response_text[1])
+		else:
+			bot.sendMessage(chat_id, response_text)
 
 
 bot = telepot.Bot(telegram_botTOKEN)

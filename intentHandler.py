@@ -73,7 +73,8 @@ def list_selection(recipename):
 	responsetxt +=  '1. /instruction \n' + \
 		            '2. /time for cooking \n' + \
 					'3. /ingredients \n' + \
-					'4. /all information \n'
+					'4. /img \n' + \
+					'5. /all information \n'
 	return responsetxt
 
 def rec_ingrd(recipeID, recipename, chat_id):
@@ -152,8 +153,16 @@ def Intent_Handler(intent_name, parameters, chat_id):
 
 	elif intent_name == "Recipe - recipeimg":
 		recipename = parameters["recipename"]
-		# To be updated
-		response_text = recipename
+		recipeID = int(parameters["RID"])
+
+		# return an img of a recipe
+		if USERS[chat_id].recipes[recipeID]["Images"] != '[]':
+			img_url = USERS[chat_id].recipes[recipeID]["Images"]
+			img_url = img_url[1:-1].split('\n')[0][1:-1]
+			print(img_url)
+			response_text = ['here is the image of ' + recipename, img_url]
+		else:
+			response_text = 'no image of ' + recipename
 
 	elif intent_name == "Recipe - Ingredients":
 		recipename = parameters["recipename"]
@@ -163,7 +172,9 @@ def Intent_Handler(intent_name, parameters, chat_id):
 
 	#Showing more recipe results. Can be coming from random flow or specific flow
 	elif intent_name == "Recipe - more_results":
-
+		print(parameters['ingredients'])
+		print(parameters['cuisine'])
+		print(parameters['dietary'])
 		if parameters['ingredients'] != '':
 			ingred = parameters['ingredients']
 			cuisine = parameters["cuisine"]
