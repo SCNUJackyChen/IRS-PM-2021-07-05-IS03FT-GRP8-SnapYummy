@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "recipeagent-swjn",
+  "private_key_id": "391482679df43cf5eccd5e9dd4a866e67b285d22",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCfV3gBwgcGUyoA\nhZWq6cvwxOriKIlvQfClfvhhxSJVM5s1RjOsfCm/o/0dDt7crNC1EqKqx9sWU95f\nXqRxj4qheihXt6sIwNFO0XxVqzHFLcT+6nEw4kDW+kgKWFFz6E8Ag6cAk4PbY04k\nhEDpE5I9N56Nel9LVczTaDMKvmkcvZPE6k7Ou9DOkoV5uuutpo3+MWJm7jmLgxiO\nZMhXIldlhJ/VBdd4FvPR6+9XCG4phhyEM0339cq0mARX43Sz2xwsyIMPCnW5mKRz\nVqLFrgzZJ6WPt6O3LXPM7zbg9okGNALR0KwHbGPEjuXdm3EoD83xxpfZj/cx3Yz5\n31LMTjvdAgMBAAECggEAEWWC2CpKCwznCoyLH9BhGuXc68PXkW/maU3Yqg/++hoQ\nHtEN0ONIyZVgC/KfhAH9fVojVrhK4///Hh7JSblivijbS7cP83zdvUMOKz+YHPos\nxlTBS+rVKm4ZPGvnugW0eQ678R+p5zjLLh3Jr8jFEBhI9WhVYXZkzktTkJ+OU/v1\n3C3rNq7klCS+cPSFd8Iwo1O9KyHznczhcE/SVab35uHfv4mOI5AaAVGLG/8CjSDO\nISVzwRsRQddffaCcRR0+MXWMRHiLUD4csenb/M7wV6v3KY2yPV/WLRyAGYTqd9fB\nF8pMZgLYkexTxPmD+jEsVNNC5boHSEBGCEQDDYBdvwKBgQDTa7LfuY725X4yBnLW\nq7WnHfja/hOrQiRCAqvcp5b/bVxIN/Bt1smMsL1Qv/+M+z0Ac94q/WxS3/PxM1TN\nezz+W0IsFRx3ZuAF86dtAQPWYEXuuvC2KAdwjAS2retZ9RY1E1gL0GXiWCzg8GBX\nJ129NLnKadAeg18fEGCPDOnSowKBgQDA8Jc3Y9whwg66xuovPze8GKXNV8uLOXka\nTZcD80klUxKJYOTEAgbGIspXYjpAhOj7XTehB5ctFL03DutuHGNYc7GCmGqkF4E0\n6PXSdyROk646p+FbkCjTUYRN6AEHexV7R4GR07IsUKDnm4JHQUCQT+qyoIYeJCeo\nHz6dVs8ffwKBgQCT4B2BzFkJqeUFemsyaXGqDRW1nscFH0MbBKFOuc2spMJKJQ4+\n1V+tzyTraQ+GfWfifCil6xGsOcZ3K48iFhPIWO5ExRNfFI6WuyCc5nvXowjm/MxG\nrGLfvp/BYo5eIkXBI+GOidnpYgEp6BeKfhdbsphM0ovl+785jAvtonudfwKBgQCN\nDJYP6VIZ38ty4k574eR1/zLfDosAKjENeKGpQqc7wSJxCkPTw4N+QBrajTX2yvOk\nJ76uW2U6kMnPQXn90oUSOeoQhiqX8ZMEwjZL+cuyIiaiPO70SEyASDzH049FD8dh\ni6H+oNvFp+Ap0bcJLnvrxHDYy5+g01+meckFr1vWMwKBgG5N/ieSnzl3CoUewqsg\nXBtfl26NoOXZGt8w68MW8465uCgcNpgzPJb9XaKR0dtYB7FgN0YikxXOGpvUiQ59\n9uNvVtqjda//0PW4iO1i82Topf/pgpKNSw+TLYi9KA0lXi9jkoTWpB/nNrzaR4Um\noesaAwzzGOhYnkUMzCK1wjzW\n-----END PRIVATE KEY-----\n",
+  "client_email": "dialogflowapi@recipeagent-swjn.iam.gserviceaccount.com",
+  "client_id": "100750772447888667096",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dialogflowapi%40recipeagent-swjn.iam.gserviceaccount.com"
+}
