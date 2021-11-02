@@ -1,0 +1,54 @@
+[
+  {
+    "id": "e9dacd35-4815-47c6-83df-0b86b8e2b6c2",
+    "data": [
+      {
+        "text": "anything",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "f9219063-3f22-4102-8993-6e22bfba3985",
+    "data": [
+      {
+        "text": "surprise me",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "c64e5ded-2580-480e-abd4-dba56ee70f98",
+    "data": [
+      {
+        "text": "give me random dishes",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "87033181-b6ec-4da3-baed-1be1504c416f",
+    "data": [
+      {
+        "text": "random",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

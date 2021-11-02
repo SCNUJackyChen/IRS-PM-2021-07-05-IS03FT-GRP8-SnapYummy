@@ -1,0 +1,54 @@
+[
+  {
+    "id": "147a96a8-1f64-479a-9962-e079f18b5f84",
+    "data": [
+      {
+        "text": "how much time needed",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "649f1e3b-c2fc-41c6-a549-9795815911f3",
+    "data": [
+      {
+        "text": "preparation time",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "302a6706-922e-4f37-8f6a-b0d1d8451ffd",
+    "data": [
+      {
+        "text": "what is the cooking time for this dish",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "6564c917-552b-4771-a333-d86cb0a32bf1",
+    "data": [
+      {
+        "text": "cooking time",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

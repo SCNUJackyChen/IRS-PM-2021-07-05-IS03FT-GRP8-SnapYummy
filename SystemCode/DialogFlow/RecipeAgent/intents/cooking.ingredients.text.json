@@ -1,0 +1,62 @@
+{
+  "id": "dc2d5828-ccb6-4276-8e11-ae70a9de3532",
+  "name": "cooking.ingredients.text",
+  "auto": true,
+  "contexts": [
+    "cooking_ingredients"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "cookingingredientstext-followup",
+          "lifespan": 5
+        },
+        {
+          "name": "cooking_ingredients",
+          "lifespan": 0
+        }
+      ],
+      "parameters": [
+        {
+          "id": "3890fe65-5a62-442f-8ac5-53d9300bc91f",
+          "name": "ingredients",
+          "required": false,
+          "dataType": "@ingredients",
+          "value": "$ingredients",
+          "defaultValue": "",
+          "isList": true,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Detected ingredients are $ingredients, would you like to make any modification?",
+            "Your ingredients list: $ingredient. Need any modification?"
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

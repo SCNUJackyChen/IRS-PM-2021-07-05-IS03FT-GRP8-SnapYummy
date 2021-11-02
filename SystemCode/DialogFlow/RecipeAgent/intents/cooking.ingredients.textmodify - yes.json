@@ -1,0 +1,48 @@
+{
+  "id": "34b991fc-5dc8-4396-88ec-aa15697066b4",
+  "parentId": "dc2d5828-ccb6-4276-8e11-ae70a9de3532",
+  "rootParentId": "dc2d5828-ccb6-4276-8e11-ae70a9de3532",
+  "name": "cooking.ingredients.textmodify - yes",
+  "auto": true,
+  "contexts": [
+    "cookingingredientstext-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "cookingingredientstext.cookingingredientstext-yes",
+      "affectedContexts": [
+        {
+          "name": "cooking_ingredients",
+          "lifespan": 5
+        },
+        {
+          "name": "cookingingredientstext-followup",
+          "lifespan": 0
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Please input your ingredients again"
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

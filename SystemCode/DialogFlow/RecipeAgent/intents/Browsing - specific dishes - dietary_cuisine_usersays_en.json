@@ -1,0 +1,211 @@
+[
+  {
+    "id": "ef7c4263-63c9-47f5-be19-6f9d516655b6",
+    "data": [
+      {
+        "text": "I like ",
+        "userDefined": false
+      },
+      {
+        "text": "chinese",
+        "meta": "@cuisine",
+        "alias": "cuisine",
+        "userDefined": false
+      },
+      {
+        "text": " food",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "444949d1-0780-448d-8115-071294099c64",
+    "data": [
+      {
+        "text": "no cuisine",
+        "meta": "@cuisine",
+        "alias": "cuisine",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "b0f80261-ea83-4cd8-9288-9d05f978547a",
+    "data": [
+      {
+        "text": "no dietary",
+        "meta": "@dietary",
+        "alias": "dietary",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "a96f61dc-5ede-464c-9613-c6854628c1d4",
+    "data": [
+      {
+        "text": "I have ",
+        "userDefined": false
+      },
+      {
+        "text": "no cuisine",
+        "meta": "@cuisine",
+        "alias": "cuisine",
+        "userDefined": true
+      },
+      {
+        "text": " preferences",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "cd813023-c493-4513-aad9-29c95728aa3f",
+    "data": [
+      {
+        "text": "I have ",
+        "userDefined": false
+      },
+      {
+        "text": "no dietary",
+        "meta": "@dietary",
+        "alias": "dietary",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "e59c66f5-8192-4bb3-bc75-870c55c976f2",
+    "data": [
+      {
+        "text": "I want to try ",
+        "userDefined": false
+      },
+      {
+        "text": "korean",
+        "meta": "@cuisine",
+        "alias": "cuisine",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "halal",
+        "meta": "@dietary",
+        "alias": "dietary",
+        "userDefined": false
+      },
+      {
+        "text": " food",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "305b17bd-4895-4bfa-b06f-1928a46e0503",
+    "data": [
+      {
+        "text": "I like ",
+        "userDefined": false
+      },
+      {
+        "text": "korean",
+        "meta": "@cuisine",
+        "alias": "cuisine",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "meat",
+        "meta": "@dietary",
+        "alias": "dietary",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "f1e32ec9-4175-4b3a-9b73-99819c87fae6",
+    "data": [
+      {
+        "text": "I prefer ",
+        "userDefined": false
+      },
+      {
+        "text": "chinese",
+        "meta": "@cuisine",
+        "alias": "cuisine",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "vegetarian",
+        "meta": "@dietary",
+        "alias": "dietary",
+        "userDefined": false
+      },
+      {
+        "text": " food",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "9cc39ba8-c3b6-433b-a04c-c5b26949baf3",
+    "data": [
+      {
+        "text": "I am a ",
+        "userDefined": false
+      },
+      {
+        "text": "meat-lover",
+        "meta": "@dietary",
+        "alias": "dietary",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

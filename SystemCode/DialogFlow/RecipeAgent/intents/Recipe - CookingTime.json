@@ -1,0 +1,60 @@
+{
+  "id": "6ef6ac2c-893f-40db-ab43-73ad9f45506d",
+  "parentId": "1d3a42c2-6a77-4dc0-89e2-93e162754f3d",
+  "rootParentId": "1d3a42c2-6a77-4dc0-89e2-93e162754f3d",
+  "name": "Recipe - CookingTime",
+  "auto": true,
+  "contexts": [
+    "Recipe-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "Recipe.Recipe-custom",
+      "affectedContexts": [
+        {
+          "name": "awaiting_cooktime",
+          "lifespan": 5
+        },
+        {
+          "name": "awaiting_recipename",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "1ec67d47-09fb-4e52-a6bb-f50deabd7d42",
+          "name": "recipename",
+          "required": false,
+          "dataType": "@recipename",
+          "value": "#Recipe-followup.recipename",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

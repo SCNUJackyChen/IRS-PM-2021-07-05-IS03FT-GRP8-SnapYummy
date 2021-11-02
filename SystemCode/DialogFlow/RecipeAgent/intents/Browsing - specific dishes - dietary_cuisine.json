@@ -1,0 +1,103 @@
+{
+  "id": "fe8d877b-a5be-427f-9dfb-34cdc93fc782",
+  "name": "Browsing - specific dishes - dietary_cuisine",
+  "auto": true,
+  "contexts": [
+    "Browsing-specificdishes-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "Browsing.Browsing-specificdishes-dietary_cuisine",
+      "affectedContexts": [
+        {
+          "name": "awaiting_recipename",
+          "lifespan": 5
+        },
+        {
+          "name": "Browsing-specificdishes-followup",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "f38802ca-0cd9-4f2f-b25e-6ea8304bb9e5",
+          "name": "cuisine",
+          "required": true,
+          "dataType": "@cuisine",
+          "value": "$cuisine",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is your preferred cuisine?"
+            },
+            {
+              "lang": "en",
+              "value": "What cuisines would you like to have today?"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "3d2dde8b-3a4e-466d-ac9d-ac42daab85b3",
+          "name": "dietary",
+          "required": true,
+          "dataType": "@dietary",
+          "value": "$dietary",
+          "defaultValue": "",
+          "isList": true,
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Please state your food constraints, if any"
+            },
+            {
+              "lang": "en",
+              "value": "Do you have any dietary constraints?"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "fc354ffa-782e-48bd-99e7-043f765736dd",
+          "name": "ingredients",
+          "required": false,
+          "dataType": "@ingredients",
+          "defaultValue": "",
+          "isList": true,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

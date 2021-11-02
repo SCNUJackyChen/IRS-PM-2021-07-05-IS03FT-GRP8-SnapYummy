@@ -1,0 +1,193 @@
+[
+  {
+    "id": "2f8f2a6b-3122-4ceb-9303-da373d4329cb",
+    "data": [
+      {
+        "text": "no cuisines",
+        "meta": "@cuisine",
+        "alias": "cuisine",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "4de38f77-fd97-4ab5-a2a6-6b6ecec063c2",
+    "data": [
+      {
+        "text": "no dietary",
+        "meta": "@dietary",
+        "alias": "dietary",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "5068a51e-07ef-416d-8ede-f8aa6dd8a41d",
+    "data": [
+      {
+        "text": "I have ",
+        "userDefined": false
+      },
+      {
+        "text": "no dietary",
+        "meta": "@dietary",
+        "alias": "dietary",
+        "userDefined": false
+      },
+      {
+        "text": " and ",
+        "userDefined": false
+      },
+      {
+        "text": "no cuisine",
+        "meta": "@cuisine",
+        "alias": "cuisine",
+        "userDefined": false
+      },
+      {
+        "text": " preferences",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "058b97c4-cc5b-48d0-ad70-7a12f415bd81",
+    "data": [
+      {
+        "text": "I am ",
+        "userDefined": false
+      },
+      {
+        "text": "halal",
+        "meta": "@dietary",
+        "alias": "dietary",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "ea9dbb11-dfc6-4a0e-b1cf-590096077597",
+    "data": [
+      {
+        "text": "List out ",
+        "userDefined": false
+      },
+      {
+        "text": "French",
+        "meta": "@cuisine",
+        "alias": "cuisine",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "9adfe94b-079e-4700-b4e8-677d9ca5bb89",
+    "data": [
+      {
+        "text": "Get me ",
+        "userDefined": false
+      },
+      {
+        "text": "korean",
+        "meta": "@cuisine",
+        "alias": "cuisine",
+        "userDefined": false
+      },
+      {
+        "text": " food",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "21906333-7255-4a92-861e-4b571f40bea2",
+    "data": [
+      {
+        "text": "I am ",
+        "userDefined": false
+      },
+      {
+        "text": "vegan",
+        "meta": "@dietary",
+        "alias": "dietary",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "17b747ae-f423-4468-bc65-1863d399d424",
+    "data": [
+      {
+        "text": "i love ",
+        "userDefined": false
+      },
+      {
+        "text": "meat",
+        "meta": "@dietary",
+        "alias": "dietary",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "5d36fbf3-2f7c-4a64-916f-879603703469",
+    "data": [
+      {
+        "text": "I prefer ",
+        "userDefined": false
+      },
+      {
+        "text": "chinese",
+        "meta": "@cuisine",
+        "alias": "cuisine",
+        "userDefined": false
+      },
+      {
+        "text": " food and ",
+        "userDefined": false
+      },
+      {
+        "text": "vegetarian",
+        "meta": "@dietary",
+        "alias": "dietary",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

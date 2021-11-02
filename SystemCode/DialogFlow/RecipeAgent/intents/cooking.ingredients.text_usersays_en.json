@@ -1,0 +1,268 @@
+[
+  {
+    "id": "2b6fc81c-496f-452e-82eb-2a8d40a55802",
+    "data": [
+      {
+        "text": "milk",
+        "meta": "@ingredients",
+        "alias": "ingredients",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "banana",
+        "meta": "@ingredients",
+        "alias": "ingredients",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "947f3ae1-9359-4f0c-bcb5-e36685bc9cee",
+    "data": [
+      {
+        "text": "garlic",
+        "meta": "@ingredients",
+        "alias": "ingredients",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "beetroot",
+        "meta": "@ingredients",
+        "alias": "ingredients",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "pork",
+        "meta": "@ingredients",
+        "alias": "ingredients",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "598f9ae2-f962-4904-9a13-2a8e581f2367",
+    "data": [
+      {
+        "text": "egg",
+        "meta": "@ingredients",
+        "alias": "ingredients",
+        "userDefined": true
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "scallion",
+        "meta": "@ingredients",
+        "alias": "ingredients",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "3c3d6b86-f90d-4ee9-a8a7-026635f8fce5",
+    "data": [
+      {
+        "text": "ingredients: ",
+        "userDefined": false
+      },
+      {
+        "text": "chicken breast",
+        "meta": "@ingredients",
+        "alias": "ingredients",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "fcd57348-e36e-4a98-98b8-c076bd3b9890",
+    "data": [
+      {
+        "text": "apple",
+        "meta": "@ingredients",
+        "alias": "ingredients",
+        "userDefined": false
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "garlic",
+        "meta": "@ingredients",
+        "alias": "ingredients",
+        "userDefined": false
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "chicken",
+        "meta": "@ingredients",
+        "alias": "ingredients",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "be382574-3a6a-4c45-b38e-aaaa11c0ea51",
+    "data": [
+      {
+        "text": "I have ",
+        "userDefined": false
+      },
+      {
+        "text": "pork",
+        "meta": "@ingredients",
+        "alias": "ingredients",
+        "userDefined": false
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "lamb",
+        "meta": "@ingredients",
+        "alias": "ingredients",
+        "userDefined": false
+      },
+      {
+        "text": " and ",
+        "userDefined": false
+      },
+      {
+        "text": "chicken",
+        "meta": "@ingredients",
+        "alias": "ingredients",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "f95eb6e1-defa-42fd-8167-6055d143e6cd",
+    "data": [
+      {
+        "text": "These are my ingredients: ",
+        "userDefined": false
+      },
+      {
+        "text": "chicken breast,",
+        "meta": "@ingredients",
+        "alias": "ingredients",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "pork",
+        "meta": "@ingredients",
+        "alias": "ingredients",
+        "userDefined": true
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "lamb",
+        "meta": "@ingredients",
+        "alias": "ingredients",
+        "userDefined": true
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "spinach",
+        "meta": "@ingredients",
+        "alias": "ingredients",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "ed5c4ffa-0f03-481f-8285-570ba993287a",
+    "data": [
+      {
+        "text": "I have ",
+        "userDefined": false
+      },
+      {
+        "text": "apple",
+        "meta": "@ingredients",
+        "alias": "ingredients",
+        "userDefined": true
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "beetroot",
+        "meta": "@ingredients",
+        "alias": "ingredients",
+        "userDefined": true
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "carrot",
+        "meta": "@ingredients",
+        "alias": "ingredients",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

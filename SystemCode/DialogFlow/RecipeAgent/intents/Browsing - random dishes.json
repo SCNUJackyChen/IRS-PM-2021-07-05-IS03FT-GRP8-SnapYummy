@@ -1,0 +1,85 @@
+{
+  "id": "8adb3252-cd9d-438f-aadd-a512af9ebe3c",
+  "name": "Browsing - random dishes",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "Browsing.Browsing-custom",
+      "affectedContexts": [
+        {
+          "name": "Browsing-followup",
+          "lifespan": 0
+        },
+        {
+          "name": "awaiting_recipename",
+          "lifespan": 5
+        },
+        {
+          "name": "Browsing-randomdishes-followup",
+          "lifespan": 2
+        }
+      ],
+      "parameters": [
+        {
+          "id": "73dec2ac-f24a-498b-a036-c25d4ee9c3ec",
+          "name": "ingredients",
+          "required": false,
+          "dataType": "@ingredients",
+          "defaultValue": "",
+          "isList": true,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "8c4e883f-7371-4214-9dba-4ddc7074786d",
+          "name": "cuisine",
+          "required": false,
+          "dataType": "@cuisine",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "c49aa4c6-2841-4e54-bab0-189b8da3e60c",
+          "name": "dietary",
+          "required": false,
+          "dataType": "@dietary",
+          "defaultValue": "",
+          "isList": true,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

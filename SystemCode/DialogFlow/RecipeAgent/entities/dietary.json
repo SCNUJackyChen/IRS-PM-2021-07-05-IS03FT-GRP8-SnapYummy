@@ -1,0 +1,9 @@
+{
+  "id": "999dac1f-f1c2-4e5a-a477-a2329c5a3941",
+  "name": "dietary",
+  "isOverridable": true,
+  "isEnum": false,
+  "isRegexp": false,
+  "automatedExpansion": true,
+  "allowFuzzyExtraction": false
+}

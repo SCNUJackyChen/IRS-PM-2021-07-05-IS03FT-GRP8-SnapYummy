@@ -1,0 +1,56 @@
+{
+  "id": "2eca9abb-5007-47b2-8748-a77527c15463",
+  "parentId": "1d3a42c2-6a77-4dc0-89e2-93e162754f3d",
+  "rootParentId": "1d3a42c2-6a77-4dc0-89e2-93e162754f3d",
+  "name": "Recipe - Instructions",
+  "auto": true,
+  "contexts": [
+    "Recipe-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "Recipe.Recipe-instructions",
+      "affectedContexts": [
+        {
+          "name": "awaiting_recipename",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "eb38624e-ca3d-4b7c-ba22-141157306349",
+          "name": "recipename",
+          "required": false,
+          "dataType": "@recipename",
+          "value": "#Recipe-followup.recipename",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

@@ -1,0 +1,82 @@
+{
+  "id": "c6445f65-1b70-4f22-bc73-d4f15a57d3d6",
+  "name": "Recipe - more_results",
+  "auto": true,
+  "contexts": [
+    "awaiting_recipename"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "Recipe.Recipe-more",
+      "affectedContexts": [
+        {
+          "name": "awaiting_recipename",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "0a30c29d-d181-4e77-8e3b-90414305ef2d",
+          "name": "ingredients",
+          "required": false,
+          "dataType": "@ingredients",
+          "value": "#awaiting_recipename.ingredients",
+          "defaultValue": "",
+          "isList": true,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "5895ab75-c221-4e64-9187-8ffe1e3b94e7",
+          "name": "cuisine",
+          "required": false,
+          "dataType": "@cuisine",
+          "value": "#awaiting_recipename.cuisine",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "60f2f158-165f-4721-b98e-f4865a137011",
+          "name": "dietary",
+          "required": false,
+          "dataType": "@dietary",
+          "value": "#awaiting_recipename.dietary",
+          "defaultValue": "",
+          "isList": true,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

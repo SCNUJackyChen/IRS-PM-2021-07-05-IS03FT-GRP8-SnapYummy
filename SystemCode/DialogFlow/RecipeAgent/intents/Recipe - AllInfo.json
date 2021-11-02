@@ -1,0 +1,41 @@
+{
+  "id": "91fcb00a-cdde-4a77-8305-dae504a0b474",
+  "parentId": "1d3a42c2-6a77-4dc0-89e2-93e162754f3d",
+  "rootParentId": "1d3a42c2-6a77-4dc0-89e2-93e162754f3d",
+  "name": "Recipe - AllInfo",
+  "auto": true,
+  "contexts": [
+    "Recipe-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "Recipe.Recipe-custom",
+      "affectedContexts": [
+        {
+          "name": "awaiting_recipename",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

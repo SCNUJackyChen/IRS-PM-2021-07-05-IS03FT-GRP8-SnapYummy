@@ -1,0 +1,9 @@
+{
+  "id": "cc82cdbd-07a8-469a-bd06-5dc248a3c481",
+  "name": "recipename",
+  "isOverridable": true,
+  "isEnum": false,
+  "isRegexp": false,
+  "automatedExpansion": true,
+  "allowFuzzyExtraction": false
+}

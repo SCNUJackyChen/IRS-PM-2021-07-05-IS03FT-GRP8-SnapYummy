@@ -1,0 +1,59 @@
+{
+  "id": "3799cd84-de72-4070-b5de-7837ac3465d1",
+  "parentId": "dc2d5828-ccb6-4276-8e11-ae70a9de3532",
+  "rootParentId": "dc2d5828-ccb6-4276-8e11-ae70a9de3532",
+  "name": "cooking.ingredients.textmodify - no",
+  "auto": true,
+  "contexts": [
+    "cookingingredientstext-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "cookingingredientstext.cookingingredientstext-no",
+      "affectedContexts": [
+        {
+          "name": "cookingingredientstextmodify-no-followup",
+          "lifespan": 1
+        }
+      ],
+      "parameters": [
+        {
+          "id": "71ca8b1d-104a-4dfb-8be0-096b89aea2db",
+          "name": "ingredients",
+          "required": false,
+          "dataType": "@ingredients",
+          "value": "#cookingingredientstext-followup.ingredients",
+          "defaultValue": "",
+          "isList": true,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "These are your ingredients: $ingredients . What is your preferred cuisine and any dietary constraints?"
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

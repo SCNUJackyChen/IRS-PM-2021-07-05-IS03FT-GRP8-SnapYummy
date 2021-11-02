@@ -1,0 +1,54 @@
+[
+  {
+    "id": "fa920196-fb07-46c9-98bc-d0d1231966da",
+    "data": [
+      {
+        "text": "what is the ingredients",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "147c252e-d883-41af-a2dd-ac15ae75d053",
+    "data": [
+      {
+        "text": "get ingredients",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "a58707c2-11ce-4a41-8d4c-3509e09504a0",
+    "data": [
+      {
+        "text": "show ingredients",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "4f896418-d82d-4324-b2b8-468ef1e0cd92",
+    "data": [
+      {
+        "text": "show me the ingredients for this dish",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

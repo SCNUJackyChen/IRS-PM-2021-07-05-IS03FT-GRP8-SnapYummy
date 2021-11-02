@@ -1,0 +1,282 @@
+[
+  {
+    "value": "apple",
+    "synonyms": [
+      "apple",
+      "apples"
+    ]
+  },
+  {
+    "value": "chicken",
+    "synonyms": [
+      "chicken",
+      "chicken breast",
+      "chicken wing",
+      "chicken thigh"
+    ]
+  },
+  {
+    "value": "meat",
+    "synonyms": [
+      "meat"
+    ]
+  },
+  {
+    "value": "beetroot",
+    "synonyms": [
+      "beetroot"
+    ]
+  },
+  {
+    "value": "garlic",
+    "synonyms": [
+      "garlic"
+    ]
+  },
+  {
+    "value": "chicken",
+    "synonyms": [
+      "chicken"
+    ]
+  },
+  {
+    "value": "pork",
+    "synonyms": [
+      "pork"
+    ]
+  },
+  {
+    "value": "salmon",
+    "synonyms": [
+      "salmon"
+    ]
+  },
+  {
+    "value": "seafood",
+    "synonyms": [
+      "seafood"
+    ]
+  },
+  {
+    "value": "beef",
+    "synonyms": [
+      "beef"
+    ]
+  },
+  {
+    "value": "lamb",
+    "synonyms": [
+      "lamb"
+    ]
+  },
+  {
+    "value": "egg",
+    "synonyms": [
+      "egg",
+      "eggs"
+    ]
+  },
+  {
+    "value": "milk",
+    "synonyms": [
+      "milk"
+    ]
+  },
+  {
+    "value": "apple",
+    "synonyms": [
+      "apple",
+      "apples"
+    ]
+  },
+  {
+    "value": "banana",
+    "synonyms": [
+      "Banana"
+    ]
+  },
+  {
+    "value": "bell pepper",
+    "synonyms": [
+      "Bell pepper",
+      "bellpepper"
+    ]
+  },
+  {
+    "value": "broccoli",
+    "synonyms": [
+      "Broccoli"
+    ]
+  },
+  {
+    "value": "cabbage",
+    "synonyms": [
+      "Cabbage"
+    ]
+  },
+  {
+    "value": "carrot",
+    "synonyms": [
+      "Carrot"
+    ]
+  },
+  {
+    "value": "cheese",
+    "synonyms": [
+      "Cheese"
+    ]
+  },
+  {
+    "value": "coconut",
+    "synonyms": [
+      "Coconut"
+    ]
+  },
+  {
+    "value": "cucumber",
+    "synonyms": [
+      "Cucumber"
+    ]
+  },
+  {
+    "value": "fish",
+    "synonyms": [
+      "Fish"
+    ]
+  },
+  {
+    "value": "grape",
+    "synonyms": [
+      "Grape"
+    ]
+  },
+  {
+    "value": "lemon",
+    "synonyms": [
+      "Lemon"
+    ]
+  },
+  {
+    "value": "mango",
+    "synonyms": [
+      "Mango"
+    ]
+  },
+  {
+    "value": "mushroom",
+    "synonyms": [
+      "Mushroom"
+    ]
+  },
+  {
+    "value": "orange",
+    "synonyms": [
+      "Orange"
+    ]
+  },
+  {
+    "value": "peach",
+    "synonyms": [
+      "Peach"
+    ]
+  },
+  {
+    "value": "pear",
+    "synonyms": [
+      "Pear"
+    ]
+  },
+  {
+    "value": "pineapple",
+    "synonyms": [
+      "Pineapple",
+      "pineapples"
+    ]
+  },
+  {
+    "value": "potato",
+    "synonyms": [
+      "Potato",
+      "potatoes"
+    ]
+  },
+  {
+    "value": "pumpkin",
+    "synonyms": [
+      "Pumpkin"
+    ]
+  },
+  {
+    "value": "shrimp",
+    "synonyms": [
+      "Shrimp",
+      "prawn"
+    ]
+  },
+  {
+    "value": "strawberry",
+    "synonyms": [
+      "Strawberry"
+    ]
+  },
+  {
+    "value": "tomato",
+    "synonyms": [
+      "Tomato",
+      "tomatoes"
+    ]
+  },
+  {
+    "value": "watermelon",
+    "synonyms": [
+      "Watermelon",
+      "water melon"
+    ]
+  },
+  {
+    "value": "winter melon",
+    "synonyms": [
+      "Winter melon",
+      "wintermelon"
+    ]
+  },
+  {
+    "value": "garlic",
+    "synonyms": [
+      "Garlic",
+      "garlics"
+    ]
+  },
+  {
+    "value": "corn",
+    "synonyms": [
+      "Corn",
+      "corns"
+    ]
+  },
+  {
+    "value": "eggplant",
+    "synonyms": [
+      "Eggplant"
+    ]
+  },
+  {
+    "value": "lettuce",
+    "synonyms": [
+      "Lettuce",
+      "lettuces"
+    ]
+  },
+  {
+    "value": "onion",
+    "synonyms": [
+      "Onion"
+    ]
+  },
+  {
+    "value": "scallion",
+    "synonyms": [
+      "Scallion"
+    ]
+  }
+]

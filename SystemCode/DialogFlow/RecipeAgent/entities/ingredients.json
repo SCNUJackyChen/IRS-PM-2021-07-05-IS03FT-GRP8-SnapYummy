@@ -1,0 +1,9 @@
+{
+  "id": "af7ec03f-145a-450e-bbdf-e95070632748",
+  "name": "ingredients",
+  "isOverridable": true,
+  "isEnum": false,
+  "isRegexp": false,
+  "automatedExpansion": true,
+  "allowFuzzyExtraction": false
+}

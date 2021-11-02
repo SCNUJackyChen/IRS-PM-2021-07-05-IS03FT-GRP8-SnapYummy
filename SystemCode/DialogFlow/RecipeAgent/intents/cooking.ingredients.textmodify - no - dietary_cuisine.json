@@ -1,0 +1,94 @@
+{
+  "id": "25447660-65dc-4687-a51d-d5ee7dca2610",
+  "parentId": "3799cd84-de72-4070-b5de-7837ac3465d1",
+  "rootParentId": "dc2d5828-ccb6-4276-8e11-ae70a9de3532",
+  "name": "cooking.ingredients.textmodify - no - dietary_cuisine",
+  "auto": true,
+  "contexts": [
+    "cookingingredientstextmodify-no-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "cookingingredientstext.cookingingredientstext-no.cookingingredientstextmodify-no-custom",
+      "affectedContexts": [
+        {
+          "name": "awaiting_recipename",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "cf818337-6407-4041-b796-5bcd40b63a03",
+          "name": "cuisine",
+          "required": true,
+          "dataType": "@cuisine",
+          "value": "$cuisine",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What\u0027s your preferred cuisine?"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "b18d7f96-3bf9-4d2f-92e7-e1217640d762",
+          "name": "dietary",
+          "required": true,
+          "dataType": "@dietary",
+          "value": "$dietary",
+          "defaultValue": "",
+          "isList": true,
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is your preferred dietary?"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "ba2cd176-088f-4f21-886d-362c50bc8b10",
+          "name": "ingredients",
+          "required": false,
+          "dataType": "@ingredients",
+          "value": "#cookingingredientstextmodify-no-followup.ingredients",
+          "defaultValue": "",
+          "isList": true,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

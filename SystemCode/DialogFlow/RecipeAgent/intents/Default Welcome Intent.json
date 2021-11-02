@@ -1,0 +1,69 @@
+{
+  "id": "5f1a0a64-f367-47d3-b9a5-734cd549723d",
+  "name": "Default Welcome Intent",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "input.welcome",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Good day, Welcome to RecipePR.  If you are looking for \n1. /cooking based on your ingredients, or \n2. Browsing for /recipe to cook, \nYou are coming to the right place! \n\nHow can I assist you today?",
+            "Hello, Welcome to RecipePR.\nFor cooking based on your ingredients, click /cooking\nFor leisure browsing of the recipe to cook, click /recipe"
+          ],
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "platform": "slack",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Good day, Welcome to RecipePR.  If you are looking for /cooking based on the ingredients that you have or looking for /recipe to cook, you are coming to the right place!",
+            "Good day, Welcome to RecipePR.  If you are looking for \n1. /cooking based on your ingredients, or \n2. Browsing for /recipe to cook, \nYou are coming to the right place! \n\nHow can I assist you today?",
+            "Hello, Welcome to RecipePR.\nFor cooking based on your ingredients, click /cooking\nFor leisure browsing of the recipe to cook, click /recipe"
+          ],
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "platform": "telegram",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Good day, Welcome to RecipePR.  If you are looking for \n1. /cooking based on your ingredients, or \n2. Browsing for /recipe to cook, \nYou are coming to the right place! \n\nHow can I assist you today?",
+            "Hello, Welcome to RecipePR.\nFor cooking based on your ingredients, click /cooking\nFor leisure browsing of the recipe to cook, click /recipe"
+          ],
+          "condition": ""
+        }
+      ],
+      "defaultResponsePlatforms": {
+        "slack": true,
+        "telegram": true
+      },
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [
+    {
+      "name": "WELCOME"
+    }
+  ],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

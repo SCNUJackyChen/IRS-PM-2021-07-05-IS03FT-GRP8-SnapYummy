@@ -1,0 +1,50 @@
+[
+  {
+    "value": "vegetarian",
+    "synonyms": [
+      "vegetarian",
+      "veggies",
+      "veg",
+      "vegan",
+      "vegetables only",
+      "veggies only",
+      "vegg",
+      "herbivorous",
+      "gluten-free",
+      "plant-eating",
+      "veggie-lovers"
+    ]
+  },
+  {
+    "value": "halal",
+    "synonyms": [
+      "halal",
+      "no pork",
+      "no lard"
+    ]
+  },
+  {
+    "value": "eggetarian",
+    "synonyms": [
+      "Eggetarian",
+      "vegetarian who also eat eggs and eggs product"
+    ]
+  },
+  {
+    "value": "fruitarian",
+    "synonyms": [
+      "fruitarian",
+      "fruits",
+      "fruit"
+    ]
+  },
+  {
+    "value": "non-vegetarians",
+    "synonyms": [
+      "non-vegetarians",
+      "non-veg",
+      "non-vegetarian",
+      "meat-lovers"
+    ]
+  }
+]

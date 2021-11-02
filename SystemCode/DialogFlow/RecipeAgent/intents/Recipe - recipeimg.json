@@ -1,0 +1,60 @@
+{
+  "id": "93b35517-60ef-403f-874c-426a5c537842",
+  "parentId": "1d3a42c2-6a77-4dc0-89e2-93e162754f3d",
+  "rootParentId": "1d3a42c2-6a77-4dc0-89e2-93e162754f3d",
+  "name": "Recipe - recipeimg",
+  "auto": true,
+  "contexts": [
+    "Recipe-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "Recipe.Recipe-recipeimg",
+      "affectedContexts": [
+        {
+          "name": "awaiting_recipeimg",
+          "lifespan": 5
+        },
+        {
+          "name": "awaiting_recipename",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "89c6b2f6-7f3e-4d8b-b62f-fba4ad223e02",
+          "name": "recipename",
+          "required": false,
+          "dataType": "@recipename",
+          "value": "#Recipe-followup.recipename",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

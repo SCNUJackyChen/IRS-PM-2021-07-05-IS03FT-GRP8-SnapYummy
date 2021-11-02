@@ -1,0 +1,28 @@
+[
+  {
+    "id": "983a04ca-c7af-4bc2-872b-5844b73d0a1d",
+    "data": [
+      {
+        "text": "recipe",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "16452830-c619-4410-ae26-17860d6e1eac",
+    "data": [
+      {
+        "text": "browsing",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

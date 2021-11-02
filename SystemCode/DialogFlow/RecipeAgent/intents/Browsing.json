@@ -1,0 +1,45 @@
+{
+  "id": "bb6bcf55-063a-4053-8e9c-5effd7397df0",
+  "name": "Browsing",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "Browsing-followup",
+          "lifespan": 2
+        },
+        {
+          "name": "cooking_ingredients",
+          "lifespan": 0
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Would you like to show random dishes or specific dishes?",
+            "We can offer random dishes that will surprise you or specific dishes based on your dietary constraints or preferred cuisine. Do you like random dishes or specific dishes?"
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

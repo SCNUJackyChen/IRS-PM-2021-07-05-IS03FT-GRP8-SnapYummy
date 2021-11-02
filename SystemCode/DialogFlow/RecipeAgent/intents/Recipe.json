@@ -1,0 +1,98 @@
+{
+  "id": "1d3a42c2-6a77-4dc0-89e2-93e162754f3d",
+  "name": "Recipe",
+  "auto": true,
+  "contexts": [
+    "awaiting_recipename"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "Recipe-followup",
+          "lifespan": 5
+        },
+        {
+          "name": "awaiting_recipename",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "1b884d26-5c88-4bf3-82b6-01277ac6fad2",
+          "name": "recipename",
+          "required": true,
+          "dataType": "@recipename",
+          "value": "$recipename",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the recipename"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "d7bab81f-f188-495f-9d62-e726ea7dc0fe",
+          "name": "cuisine",
+          "required": false,
+          "dataType": "@cuisine",
+          "value": "#awaiting_recipename.cuisine",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "fbb258c3-2482-40b9-9d9d-576acf3cdec1",
+          "name": "dietary",
+          "required": false,
+          "dataType": "@dietary",
+          "value": "#awaiting_recipename.dietary",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        }
+      ],
+      "defaultResponsePlatforms": {
+        "telegram": true
+      },
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [
+    {
+      "name": "get_list_recipe"
+    }
+  ],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

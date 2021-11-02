@@ -1,0 +1,41 @@
+{
+  "id": "9aa5015a-bcc3-459d-a629-3b7baa978b7d",
+  "name": "Browsing - specific dishes",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "Browsing.Browsing-specific",
+      "affectedContexts": [
+        {
+          "name": "Browsing-specificdishes-followup",
+          "lifespan": 2
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Leisure browsing for specific dishes. What is your preferred cuisines or any dietary constraints?",
+            "I would show you specific dishes based on your preference. Please input your preferred cuisines and dietary constraints."
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}
