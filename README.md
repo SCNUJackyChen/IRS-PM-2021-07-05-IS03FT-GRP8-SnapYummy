@@ -35,7 +35,7 @@ To date, our Intelligent Cooking Assistant are based on the recipes shared by co
 | Chen Ziqi | A0231425R | Object detection model(YOLOv5) training, Neo4j deployment and query, Backend logic, Project Report, Tech | chenziqi@u.nus.edu |
 | Li Peifeng | A0231447J | xxxxxxxxxx yyyyyyyyyy zzzzzzzzzz| A1234567B@gmail.com |
 | Mediana | A0231458E | xxxxxxxxxx yyyyyyyyyy zzzzzzzzzz| mediana@u.nus.edu |
-| Xu Xuanbo | A0231436M | xxxxxxxxxx yyyyyyyyyy zzzzzzzzzz| A1234567D@yahoo.com |
+| Xu Xuanbo | A0231436M | Knowledge Engineering| e0703468@u.nus.edu |
 
 ---
 
