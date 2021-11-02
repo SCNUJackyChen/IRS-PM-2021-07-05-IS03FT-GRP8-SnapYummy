@@ -41,7 +41,7 @@ To date, our Intelligent Cooking Assistant are based on the recipes shared by co
 
 ## SECTION 4 : VIDEO OF SYSTEM MODELLING & USE CASE DEMO
 
-[![technique video for system architecture and demo case]()](https://drive.google.com/file/d/1InixDkM9xW4d1PuJ9FrLy1z6tUhUiNqm/view?usp=sharing)
+[![technique video for system architecture and demo case](https://github.com/SCNUJackyChen/IRS-PM-2021-11-07-IS03FT-GRP8-SnapYummy/blob/main/SystemCode/clips/static/video_cover.png)](https://drive.google.com/file/d/1InixDkM9xW4d1PuJ9FrLy1z6tUhUiNqm/view?usp=sharing)
 
 ---
 
