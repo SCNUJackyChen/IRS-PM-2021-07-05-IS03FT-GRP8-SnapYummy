@@ -7,6 +7,7 @@ from intentHandler import *
 import random
 from telepot.loop import MessageLoop
 
+
 # from pprint import pprint
 
 # global settings
@@ -31,25 +32,61 @@ def reqHandler(msg):  # directly monitor telegram
 		bot.download_file(msg['photo'][-1]['file_id'], img_dir)  # download the image sent by users
 		detected_ingredients = detect_image(img_dir)  # send the img to YOLO and get results
 
-		# whenever user upload an image, send '/cooking' to DF -> reset the workflow
-		detect_intent_texts(df_agentID, msg['chat']['id'], '/cooking', 'en-US')
-		(intent_name, df_response, parameters) = detect_intent_texts(df_agentID, msg['chat']['id'], ', '.join(detected_ingredients),
-																	 'en-US')
-		print(intent_name, "-", df_response, "-", parameters)
-		bot.sendMessage(chat_id, df_response)
+		if len(detected_ingredients) == 0:  # no thing detected
+			bot.sendMessage(chat_id, 'nothing detected, please use other images or input by texting :(')
+		else:  # anything is detected
+			# whenever user upload an image, send '/cooking' to DF -> reset the workflow
+			detect_intent_texts(df_agentID, msg['chat']['id'], '/cooking', 'en-US')
+			(intent_name, df_response, parameters) = detect_intent_texts(df_agentID, msg['chat']['id'], ', '.join(detected_ingredients),
+																		 'en-US')
+			print(intent_name, "-", df_response, "-", parameters)
+			bot.sendMessage(chat_id, df_response)
 
 
 
 	elif msg_type == 'text':  # when a text comes in, call dialogflow API to detect the intent
 		query_sentence = str(msg['text'])
+		if query_sentence[0] == '/' and query_sentence[1:].isdigit():
+			id = int(query_sentence[1:])
+			recipe_name = USERS[chat_id].recipes[id]["Name"]
+			query_sentence = 'Got recipe for ' + recipe_name
+			USERS[chat_id].set_pick(id)
+		# elif query_sentence[0:2] == '/b' and query_sentence[2:].isdigit():
+		# 	id = int(query_sentence[2:])
+		# 	recipe_name = USERS[chat_id].recipes[id]["Name"]
+		# 	query_sentence = 'Got recipe for ' + recipe_name	
+		# 	USERS[chat_id].set_pick(id)
+		elif query_sentence == '/instruction':
+			query_sentence = 'instructions'
+		elif query_sentence == '/time':
+			query_sentence = 'cooking time'
+		elif query_sentence == '/ingredients':
+			query_sentence = 'show me the ingredients for this dish'
+		elif query_sentence == '/all':
+			query_sentence = 'show all'
+		elif query_sentence == '/more':
+			query_sentence = 'more results'
+		elif query_sentence == '/img':
+			query_sentence = 'show me the recipe image'
+		
 		(intent_name, df_response, parameters) = detect_intent_texts(df_agentID, msg['chat']['id'], query_sentence,
 																	 'en-US')
 		print(intent_name, "-", df_response, "-", parameters)
 		if df_response == "":
-			response_text = Intent_Handler(intent_name, parameters)
+			if chat_id in USERS.keys():
+				id = USERS[chat_id].get_pick()
+				if id is not None:
+					parameters["recipename"] = USERS[chat_id].recipes[id]["Name"]
+					parameters["RID"] = id
+			response_text = Intent_Handler(intent_name, parameters, chat_id)
 		else:
 			response_text = df_response
-		bot.sendMessage(chat_id, response_text)
+
+		if type(response_text) == list:  # an image url is contained
+			bot.sendMessage(chat_id, response_text[0])
+			bot.sendPhoto(chat_id, response_text[1])
+		else:
+			bot.sendMessage(chat_id, response_text)
 
 
 bot = telepot.Bot(telegram_botTOKEN)

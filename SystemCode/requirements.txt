@@ -1,0 +1,4 @@
+telepot
+torch
+google-cloud-dialogflow
+py2neo

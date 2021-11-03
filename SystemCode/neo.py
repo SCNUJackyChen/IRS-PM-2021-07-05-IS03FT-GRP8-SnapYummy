@@ -9,14 +9,15 @@ import random
 graph = Graph("http://localhost:7474", username="neo4j", password='nusiss')
 
 main_ingr = set(['apple', 'banana', 'bell pepper', 'broccoli', 'cabbage', 'carrot', 'cheese', 'coconut', 'cucumber', 'egg', 'fish', 'grapes', 'lemon', 'mango', 'milk', 'mushroom', 'oranges', 'peach', 'pear', 'pineapple', 'potatoes', 'pumpkin', 'seafood', 'shrimp', 'strawberry', 'tomatoes', 'watermelon', 'winter melon', 'garlic', 'corn', 'eggplant', 'lettuce', 'onion', 'scallion', 'chicken', 'beef', 'lamb', 'pork', 'sauce', 'duck', 'meatball', 'wine', 'berries', 'crabmeat', 'kiwi', 'bitter melon', 'pepper', 'peas', 'ginger', 'shells', 'chili', 'ham', 'sausage', 'butter', 'bread', 'rice', 'vanilla'])
-random_set = {}
+
 
 
 def getRecipes(
     ingr: List[str], 
     topk: int = 10, 
-    dietary: str = None, 
-    cuisine: str = None) -> List[Dict]:
+    dietaryList: List[str] = None, 
+    cuisine: str = None,
+    skip: int = 0) -> List[Dict]:
 
     n = len(ingr)
     if (n == 0): return [{}]
@@ -47,8 +48,19 @@ def getRecipes(
     query = ''
     for i in range(n):
         query += "OPTIONAL MATCH ((rep:recipe)-[r{0}:{3}]->(i{1}:{4}{{Name: '{2}'}})) ".format(str(i), str(i), ingr_type[sorted_ingr[i]][0], ingr_type[sorted_ingr[i]][1], ingr_type[sorted_ingr[i]][2])
-    if dietary is not None:
-        query += "MATCH (rep)-[rs:Has_Meal_Type]->(:meal_type{{Name: '{0}'}}) WHERE (rep)-[:Has_Meal_Type]->(:meal_type{{Name: '{1}'}})".format(dietary, dietary)
+    if dietaryList is not None:
+        for dietary in dietaryList:
+            if dietary == 'halal':
+                query += "MATCH (rep) WHERE rep.halal is null "
+            elif dietary == 'vegetarian':
+                vegan = 'vegan'
+                query += "MATCH (rep)-[rs:Has_Meal_Type]->(:meal_type{{Name: '{0}'}}) WHERE (rep)-[:Has_Meal_Type]->(:meal_type{{Name: '{1}'}}) ".format(vegan, vegan)
+            elif dietary == 'fruitarian':
+                query += "MATCH (rep)-[:Has_Inferred_Meal_Type]->(:meal_type{Name:'fruit'}) "
+            elif dietary == 'eggetarian':
+                query += "MATCH (rep)-[:Has_Main_Ingredient]->(:main_ingredient{Name:'EGG'}) "
+    if cuisine is not None:
+        query += "MATCH (rep)-[:Has_Cuisine_Type]->(:cuisine_type{{Name: '{0}'}}) ".format(cuisine)
     query += "WITH rep, "
     for i in range(n):
         query += "r{0}, i{1}, ".format(str(i), str(i))
@@ -66,7 +78,7 @@ def getRecipes(
     for i in range(n):
         query += "(case when minus_degree{0}>=1 then 1 else 0 end)+".format(str(i))
     query = query[:-1] + " desc"
-    query += ",degree LIMIT 25;"
+    query += ",degree SKIP {0} LIMIT 25;".format(skip * topk)
 
     print(query)
     res = graph.run(query)
@@ -83,7 +95,7 @@ def getRecipes(
 # Unit Test 1
 ########################################
 
-# res = getRecipes(['apple','banana', 'strawberry'], dietary='vegan')
+# res = getRecipes(['apple','banana', 'strawberry'], dietaryList=['vegetarian'], cuisine='chinese')
 # print(type(res[0]))
 
 # Sample query
@@ -125,8 +137,8 @@ def getRecipeByName(rep: str) -> Dict:
 # RETURN rep
 
 
-def getIngredient(rep: str) -> List[str]:
-    query = "MATCH (rep:recipe)-[:Has_Ingredient]->(a:ingredient) WHERE rep.Name=~'(?i){0}' RETURN a".format(rep)
+def getIngredient(id: str, rep: str) -> List[str]:
+    query = "MATCH (rep:recipe)-[:Has_Ingredient]->(a:ingredient) WHERE rep.Name=~'(?i){0}' AND rep.RecipeId='{1}' RETURN a".format(rep, id)
     res = graph.run(query)
     res = pd.DataFrame(res)
     ingrs = []
@@ -148,27 +160,46 @@ def getIngredient(rep: str) -> List[str]:
 # RETURN a
 
 
-def random_init(length = 50):
-    query = "MATCH (n:recipe) RETURN n LIMIT {0}".format(str(length))
+# def random_init(length = 50):
+#     query = "MATCH (n:recipe) RETURN n LIMIT {0}".format(str(length))
+#     res = graph.run(query)
+#     res = pd.DataFrame(res)
+#     for i in range(res.shape[0]):
+#         random_set[i] = res.iloc[i,0]
+
+def browser(topk: int = 10, 
+            dietaryList: List[str] = None, 
+            cuisine: str = None) -> List[Dict]:
+    query = "MATCH (a:recipe) WITH rand() as r, a "
+    if dietaryList is not None:
+        for dietary in dietaryList:
+            if dietary == 'halal':
+                query += "MATCH (a) WHERE a.halal is null "
+            elif dietary == 'vegetarian':
+                vegan = 'vegan'
+                query += "MATCH (a)-[rs:Has_Meal_Type]->(:meal_type{{Name: '{0}'}}) WHERE (a)-[:Has_Meal_Type]->(:meal_type{{Name: '{1}'}}) ".format(vegan, vegan)
+            elif dietary == 'fruitarian':
+                query += "MATCH (a)-[:Has_Inferred_Meal_Type]->(:meal_type{Name:'fruit'}) "
+            elif dietary == 'eggetarian':
+                query += "MATCH (a)-[:Has_Main_Ingredient]->(:main_ingredient{Name:'EGG'}) "
+    if cuisine is not None:
+        query += "MATCH (a)-[:Has_Cuisine_Type]->(:cuisine_type{{Name: '{0}'}}) ".format(cuisine)
+    query += "RETURN a ORDER BY r LIMIT {0};".format(topk)
+    print(query)
     res = graph.run(query)
     res = pd.DataFrame(res)
+    recipes = []
     for i in range(res.shape[0]):
-        random_set[i] = res.iloc[i,0]
-
-def browser(topk: int = 10, dietary: str = None, cuisine: str = None) -> List[Dict]:
-    if (len(random_set) == 0):
-        random_init()
-    keys = random.sample(range(1,len(random_set)), topk)
-    res = itemgetter(*keys)(random_set)
-    return res
+        recipes.append(res.iloc[i,0])
+    return recipes
 
 
 ########################################
 # Unit Test 3
 ########################################
 
-# print(browser())
+# print(browser(dietaryList=['halal','fruitarian'], cuisine='chinese'))
 
 
-    
+
     
