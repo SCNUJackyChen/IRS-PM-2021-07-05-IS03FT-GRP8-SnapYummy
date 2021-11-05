@@ -33,7 +33,7 @@ To date, our Intelligent Cooking Assistant are based on the recipes shared by co
 | Official Full Name  | Student ID (MTech Applicable)  | Work Items (Who Did What) | Email (Optional) |
 | :------------ |:---------------:| :-----| :-----|
 | Chen Ziqi | A0231425R | Object detection model(YOLOv5) training, Neo4j deployment and query, Backend logic, Project Report, Tech Video | chenziqi@u.nus.edu |
-| Li Peifeng | A0231447J | xxxxxxxxxx yyyyyyyyyy zzzzzzzzzz| A1234567B@gmail.com |
+| Li Peifeng | A0231447J | Training data processing, Object detection model(YOLOv5) training, Backend logic, Project Report, Business Video| lipeifeng98@u.nus.edu |
 | Mediana | A0231458E | xxxxxxxxxx yyyyyyyyyy zzzzzzzzzz| mediana@u.nus.edu |
 | Xu Xuanbo | A0231436M | Knowledge Engineering| e0703468@u.nus.edu |
 
