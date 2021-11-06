@@ -2,6 +2,10 @@
 
 ## SnapYummy -- Intelligent Cooking Assistant
 
+[![Business video](https://github.com/SCNUJackyChen/IRS-PM-2021-11-07-IS03FT-GRP8-SnapYummy/blob/main/SystemCode/clips/static/video1.png)](https://www.youtube.com/watch?v=3y25ibzwLP4)
+
+
+
 
 ---
 
