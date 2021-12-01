@@ -1,8 +1,8 @@
-﻿## SECTION 1 : PROJECT TITLE
+## SECTION 1 : PROJECT TITLE
 
 ## SnapYummy -- Intelligent Cooking Assistant
 
-[![Business video](https://github.com/SCNUJackyChen/IRS-PM-2021-11-07-IS03FT-GRP8-SnapYummy/blob/main/SystemCode/clips/static/video1.png)](https://www.youtube.com/watch?v=3y25ibzwLP4)
+[![Business video](https://github.com/SCNUJackyChen/IRS-PM-2021-07-05-IS03FT-GRP8-SnapYummy/blob/main/SystemCode/clips/static/video1.png)](https://www.youtube.com/watch?v=3y25ibzwLP4)
 
 
 
@@ -10,6 +10,7 @@
 ---
 
 ## SECTION 2 : EXECUTIVE SUMMARY / PAPER ABSTRACT
+
 Due to Covid19 that occurred since December 2019, a significant proportion of the world including Singapore have been changing the way they lived.  Working from home, minimizing the interaction with people by keeping a safe distance and home-dining has become the norm. With people spending more time cooking at home, there has been an increased demand on cooking recipe and instructions.  
 
 Our team proposed SnapYummy, an Intelligent Cooking Assistant that can detect the ingredients available in the refrigerator, and then present to users all the available recipes that are suitable for users to cook, and according to their preferences. It interacts with users via Telegram, a widely used Messaging Platform, and shows the recipe images, instructions, ingredients, and cooking time for users as references. 
@@ -34,28 +35,27 @@ To date, our Intelligent Cooking Assistant are based on the recipes shared by co
 
 ## SECTION 3 : CREDITS / PROJECT CONTRIBUTION
 
-| Official Full Name  | Student ID (MTech Applicable)  | Work Items (Who Did What) | Email (Optional) |
-| :------------ |:---------------:| :-----| :-----|
-| Chen Ziqi | A0231425R | Object detection model(YOLOv5) training, Neo4j deployment and query, Backend logic, Project Report, Tech Video | chenziqi@u.nus.edu |
-| Li Peifeng | A0231447J | Training data processing, Object detection model(YOLOv5) training, Backend logic, Project Report, Business Video| lipeifeng98@u.nus.edu |
-| Mediana | A0231458E | Recipe Dataset Acquisition and Pre-processing, Recipe Knowledge Design and Activity Flow Design, DialogFlow - Intent Detection, Backend DialogFlow Script Integration and Frontend Telegram Setup, Report Writing and Business Video Presentation | mediana@u.nus.edu |
-| Xu Xuanbo | A0231436M | Knowledge Engineering| e0703468@u.nus.edu |
+| Official Full Name | Student ID (MTech Applicable) | Work Items (Who Did What)                                    | Email (Optional)      |
+| :----------------- | :---------------------------: | :----------------------------------------------------------- | :-------------------- |
+| Chen Ziqi          |           A0231425R           | Object detection model(YOLOv5) training, Neo4j deployment and query, Backend logic, Project Report, Tech Video | chenziqi@u.nus.edu    |
+| Li Peifeng         |           A0231447J           | Training data processing, Object detection model(YOLOv5) training, Backend logic, Project Report, Business Video | lipeifeng98@u.nus.edu |
+| Mediana            |           A0231458E           | Recipe Dataset Acquisition and Pre-processing, Recipe Knowledge Design and Activity Flow Design, DialogFlow - Intent Detection, Backend DialogFlow Script Integration and Frontend Telegram Setup, Report Writing and Business Video Presentation | mediana@u.nus.edu     |
+| Xu Xuanbo          |           A0231436M           | Knowledge Engineering                                        | e0703468@u.nus.edu    |
 
 ---
 
 ## SECTION 4 : VIDEO OF SYSTEM MODELLING & USE CASE DEMO
 
-[![technique video for system architecture and demo case](https://github.com/SCNUJackyChen/IRS-PM-2021-11-07-IS03FT-GRP8-SnapYummy/blob/main/SystemCode/clips/static/video_cover.png)](https://drive.google.com/file/d/1InixDkM9xW4d1PuJ9FrLy1z6tUhUiNqm/view?usp=sharing)
+[![technique video for system architecture and demo case](https://github.com/SCNUJackyChen/IRS-PM-2021-07-05-IS03FT-GRP8-SnapYummy/blob/main/SystemCode/clips/static/video_cover.png)](https://drive.google.com/file/d/1InixDkM9xW4d1PuJ9FrLy1z6tUhUiNqm/view?usp=sharing)
 
 ---
 
 ## SECTION 5 : USER GUIDE
 
-Please refer to [user guide](https://github.com/SCNUJackyChen/IRS-PM-2021-11-07-IS03FT-GRP8-SnapYummy/blob/main/ProjectReport/SnapYummy%2C%20Intelligent%20Cooking%20Assistant%20-%20User%20Guide.pdf)
+Please refer to [user guide](https://github.com/SCNUJackyChen/IRS-PM-2021-07-05-IS03FT-GRP8-SnapYummy/blob/main/ProjectReport/SnapYummy%2C%20Intelligent%20Cooking%20Assistant%20-%20User%20Guide.pdf)
 
 ---
+
 ## SECTION 6 : PROJECT REPORT / PAPER
-Refer to project report at Github Folder: [ProjectReport](https://github.com/SCNUJackyChen/IRS-PM-2021-11-07-IS03FT-GRP8-SnapYummy/tree/main/ProjectReport)
 
-
-
+Refer to project report at Github Folder: [ProjectReport](https://github.com/SCNUJackyChen/IRS-PM-2021-07-05-IS03FT-GRP8-SnapYummy/tree/main/ProjectReport)
