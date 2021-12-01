@@ -1,0 +1,7 @@
+1. Docker 
+https://drive.google.com/drive/folders/14pni4MBB_xiyYXP45kJB1JNwOrKtDCa2?usp=sharing
+snapyummy.tar --> docker image
+neo4j.zip --> data volumn
+
+2. Original dataset (csv)
+https://drive.google.com/drive/folders/1bKofDDYTlp8p1yRtn5hioRihpPKf1Z_l
